@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Car Marketplace
 
-## Getting Started
+A modern car marketplace platform with AI-powered features, dual console system, and comprehensive car management.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### User Console
+- Advanced filtering system with URL persistence (sharable filters)
+- Test drive booking system
+- EMI calculator for financing options
+- Real-time working hours display
+- Car browsing with detailed specifications
+- Authentication system
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Admin Console
+- Complete car inventory management (add, delete, update)
+- Mark cars as sold
+- Test drive request management (complete, pending, done, etc.)
+- Real-time working hours configuration
+- Notification system for new test drive requests
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Technology Stack
 
-## Learn More
+- **Frontend**: Next.js
+- **UI Components**: shadcn/ui
+- **Authentication**: Clerk
+- **Database**: PostgreSQL with Prisma ORM
+- **Backend API**: Supabase
+- **Rate Limiting**: Arjet
 
-To learn more about Next.js, take a look at the following resources:
+## 📋 Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js (v18.0.0 or higher)
+- pnpm or npm (recommended)
+- Supabase account
+- Clerk account
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 🔐 Authentication
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The platform uses Clerk for authentication with two distinct user roles:
+- **Regular Users**: Can browse cars, save filters, book test drives, etc.
+- **Admin Users**: Have access to the admin console for managing inventory and bookings
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 💾 Database Schema
+
+The primary data models include:
+- `Car`: Car details, pricing, specifications, availability
+- `TestDrive`: Test drive bookings with status tracking
+- `WorkingHours`: Configurable business hours
+- `User`: User profiles and preferences
+
+## 🔄 Filter System
+
+The filter system is URL-based, allowing users to:
+- Filter by make, model, year, price range, etc.
+- Share filtered results via URL
+- Save favorite filters
+
+## 🧮 EMI Calculator
+
+The EMI calculator allows users to:
+- Input loan amount, interest rate, and tenure
+- Calculate monthly payments
+- View payment schedules
+- Customize down payments
+
+## ⚙️ Admin Features
+
+### Car Management
+- Add new cars with detailed specifications
+- Update existing car details
+- Mark cars as sold/unavailable
+- Upload and manage car images
+
+### Test Drive Management
+- View all test drive requests
+- Update status (pending, confirmed, completed, canceled)
+- Send notifications to users
+
+### Working Hours
+- Set working hours for each day of the week
+- Set special holiday hours
+- Changes reflect immediately on the user console
+
+## 📱 Responsive Design
+
+The application is fully responsive and optimized for:
+- Desktop browsers
+- Tablets
+- Mobile devices
+
+## 🔄 API Rate Limiting
+
+Arjet is implemented for rate limiting to:
+- Prevent abuse
+- Ensure fair usage
+- Protect sensitive endpoints
+
+## 📝 Contributing
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add some amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a merge request
+
+
+
+© 2025 AI Car Marketplace. All rights reserved.
